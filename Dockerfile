@@ -1,5 +1,4 @@
 FROM alpine:3.16.3
-LABEL maintainer="Fedor Borshev <fedor@borshev.com>"
 
 RUN apk update \
     && apk --no-cache add dumb-init postgresql-client curl aws-cli
