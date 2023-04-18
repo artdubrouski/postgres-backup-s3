@@ -28,7 +28,7 @@ postgres-backup:
     test: curl http://localhost:1880
 
   environment:
-    SCHEDULE: 0 30 */2 * * *  # every 2 hours at HH:30
+    SCHEDULE: "@every 3h"
     S3_REGION: region
     S3_ACCESS_KEY_ID: key
     S3_SECRET_ACCESS_KEY: secret
@@ -39,7 +39,8 @@ postgres-backup:
     POSTGRES_USER: user
     POSTGRES_PASSWORD: password
     POSTGRES_EXTRA_OPTS: '--schema=public --blobs'
-    SUCCESS_WEBHOOK: https://sb-ping.ru/8pp9RGwDDPzTL2R8MRb8Ae
+    SUCCESS_MESSAGE: "✅ Postgres backup completed"
+    SUCCESS_WEBHOOK: ntfy-webhook
 ```
 
 ### Automatic Periodic Backups

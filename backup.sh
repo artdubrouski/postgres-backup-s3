@@ -71,5 +71,5 @@ rm db.dump
 
 if [ -n $SUCCESS_WEBHOOK ]; then
     echo "Notifying $SUCCESS_WEBHOOK"
-    curl -m 10 --retry 5 $SUCCESS_WEBHOOK
+    curl -m 10 --retry 5 -d $SUCCESS_MESSAGE $SUCCESS_WEBHOOK
 fi
